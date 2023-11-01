@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+</head>
+<body>
+    <p>{{ test_string }}</p>
+    <form method="POST">
+        <textarea name="submitted_text" rows="5" cols="50" oninput="startTimer()"></textarea>
+        <p>Time elapsed: <span id="timer">0</span> seconds</p>
+        <input type="submit" value="Finish">
+    </form>
+
+    <script>
+        var startTime = new Date().getTime();
+        function startTimer() {
+            var currentTime = new Date().getTime();
+            var elapsedTime = Math.round((currentTime - startTime) / 1000);
+            document.getElementById('timer').innerText = elapsedTime;
+        }
+    </script>
+</body>
+</html>
